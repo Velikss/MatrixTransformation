@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Text;
 
 namespace MatrixTransformations
@@ -29,6 +30,8 @@ namespace MatrixTransformations
         {
             mat[0, 0] = v.x; mat[0, 1] = 0; mat[0, 2] = 0; mat[0, 3] = 0;
             mat[1, 0] = v.y; mat[1, 1] = 0; mat[1, 2] = 0; mat[1, 3] = 0;
+            mat[2, 0] = 1;  mat[2, 1] = 0; mat[2, 2] = 0; mat[2, 3] = 0;
+            mat[3, 0] = 1; mat[3, 1] = 0; mat[3, 2] = 0; mat[3, 3] = 0;
         }
 
         public static Matrix operator +(Matrix m1, Matrix m2)
@@ -89,15 +92,24 @@ namespace MatrixTransformations
 
         public static Vector operator *(Matrix m1, Vector v)
         {
-            Matrix mv = new Matrix(v);
-            mv = m1 * mv;
+            return (m1 * new Matrix(v)).ToVector();
+        }
 
-            return new Vector(mv.mat[0, 0], mv.mat[1, 0]);
+        public static List<Vector> operator *(Matrix m, List<Vector> vb)
+        {
+            List<Vector> returnArr = new List<Vector>(vb);
+
+            for (int i = 0; i < returnArr.Count; i++)
+                returnArr[i] = m * returnArr[i];
+            return returnArr;
         }
 
         public static Matrix ScaleMatrix(float s)
         {
-            return Identity() * s;
+            var scaler = Identity();
+            scaler.mat[2, 2] = 1;
+            scaler.mat[3, 3] = 1;
+            return scaler * s;
         }
 
         public static Matrix RotateMatrix(float degrees)
@@ -117,15 +129,24 @@ namespace MatrixTransformations
         public static Matrix TranslationMatrix(Vector v)
         {
             var translator = Identity();
-            translator.mat[0, 2] = v.x;
-            translator.mat[1, 2] = v.y;
-            translator.mat[2, 2] = v.w;
-            translator.mat[3, 2] = v.z;
+            translator.mat[0, 3] = v.x;
+            translator.mat[1, 3] = v.y;
+            translator.mat[2, 3] = v.w;
+            translator.mat[3, 3] = v.z;
             return translator;
         }
-        public static Matrix Identity()
+        public static Matrix Identity(int size = 4)
         {
-            return new Matrix();
+            Matrix id = new Matrix(size);
+            for (int i = 0; i < size; i++)
+                id.mat[i, i] = 1;
+
+            return id;
+        }
+
+        public Vector ToVector()
+        {
+            return new Vector(this.mat[0, 0], this.mat[1, 0], this.mat[2, 0], this.mat[3, 0]);
         }
 
         public override string ToString()

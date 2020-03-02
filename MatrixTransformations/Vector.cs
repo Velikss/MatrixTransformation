@@ -9,6 +9,10 @@ namespace MatrixTransformations
 
         public Vector()
         {
+            this.x = 0;
+            this.y = 0;
+            this.z = 0;
+            this.w = 0;
         }
 
         public Vector(float x, float y, float z = 0, float w = 0)

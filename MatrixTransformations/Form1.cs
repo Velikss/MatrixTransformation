@@ -52,24 +52,27 @@ namespace MatrixTransformations
             y_axis = new AxisY(200);
 
             // Create object
-            square1 = new Square(Color.Purple,100);
-            square2 = new Square(Color.Green,100);
+            square1 = new Square(Color.Purple, 100);
+            square2 = new Square(Color.Green, 50);
             square3 = new Square(Color.Blue, 100);
-            /*
-            Matrix scale = Matrix.ScaleMatrix(1.5f);
+            
+            Matrix scale = Matrix.ScaleMatrix(3.0f);
 
             for (int i = 0; i < square2.vb.Count; i++)
                 square2.vb[i] = scale * square2.vb[i];
-
-            Matrix rotated = Matrix.RotateMatrix(23);
+            
+            Matrix rotated = Matrix.RotateMatrix(20);
             for (int i = 0; i < square3.vb.Count; i++)
                 square3.vb[i] = rotated * square3.vb[i];
 
-            var transv = new Vector(150, 150);
+            
+            var transv = new Vector(50, 150);
             var translator = Matrix.TranslationMatrix(transv);
             for (int i = 0; i < square1.vb.Count; i++)
                 square1.vb[i] = translator * square1.vb[i];
-            */
+
+            Console.WriteLine(square1);
+            
 
         }
 

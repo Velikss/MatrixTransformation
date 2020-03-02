@@ -34,3 +34,12 @@ D:\repos\MatrixTransformations\MatrixTransformations\obj\Debug\MatrixTransformat
 D:\repos\MatrixTransformations\MatrixTransformations\obj\Debug\MatrixTransformations.csproj.GenerateResource.cache
 D:\repos\MatrixTransformations\MatrixTransformations\obj\Debug\MatrixTransformations.exe
 D:\repos\MatrixTransformations\MatrixTransformations\obj\Debug\MatrixTransformations.pdb
+F:\repos\MatrixTransformation\MatrixTransformations\bin\Debug\MatrixTransformations.exe.config
+F:\repos\MatrixTransformation\MatrixTransformations\bin\Debug\MatrixTransformations.exe
+F:\repos\MatrixTransformation\MatrixTransformations\bin\Debug\MatrixTransformations.pdb
+F:\repos\MatrixTransformation\MatrixTransformations\obj\Debug\MatrixTransformations.csprojAssemblyReference.cache
+F:\repos\MatrixTransformation\MatrixTransformations\obj\Debug\MatrixTransformations.Form1.resources
+F:\repos\MatrixTransformation\MatrixTransformations\obj\Debug\MatrixTransformations.Properties.Resources.resources
+F:\repos\MatrixTransformation\MatrixTransformations\obj\Debug\MatrixTransformations.csproj.GenerateResource.cache
+F:\repos\MatrixTransformation\MatrixTransformations\obj\Debug\MatrixTransformations.exe
+F:\repos\MatrixTransformation\MatrixTransformations\obj\Debug\MatrixTransformations.pdb
